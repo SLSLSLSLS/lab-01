@@ -2,9 +2,11 @@ package com.example.petshop;
 
 import java.util.Date;
 
-public class Pet {
+public abstract class  Pet {
     private String name;
     private Date birthday;
+
+    public abstract String speak();
 
     public Pet (String name){
         this.name = name;

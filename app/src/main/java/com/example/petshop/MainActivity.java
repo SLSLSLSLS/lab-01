@@ -8,13 +8,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        Pet pet = new Pet("");
+
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -22,5 +24,22 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Cat cat = new Cat("Lucy");
+        Dog dog = new Dog("Snoopy");
+        ArrayList<Pet> petList = new ArrayList<Pet>();
+
+        // Can store both Cat and Dog objects
+        // since they both inherit from Pet
+        petList.add(cat);
+        petList.add(dog);
+
+        Scorpion scorpion = new Scorpion("Scorponok");
+        petList.add(scorpion);
+        ArrayList<Pettable> pettablePets = new ArrayList<Pettable>();
+        pettablePets.add(cat);
+        pettablePets.add(dog);
+        //pettablePets.add(scorpion); // This should produce an error
     }
+
 }
