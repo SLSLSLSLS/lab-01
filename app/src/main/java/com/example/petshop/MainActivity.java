@@ -8,7 +8,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.color.HarmonizedColorsOptions;
+
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,8 +29,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Cat cat = new Cat("Lucy");
+
         Dog dog = new Dog("Snoopy");
         ArrayList<Pet> petList = new ArrayList<Pet>();
+
 
         // Can store both Cat and Dog objects
         // since they both inherit from Pet
@@ -40,6 +45,16 @@ public class MainActivity extends AppCompatActivity {
         pettablePets.add(cat);
         pettablePets.add(dog);
         //pettablePets.add(scorpion); // This should produce an error
+
+        Mood happy = new HappyMood(new Date());
+        Mood sad = new SadMood(new Date());
+
+
+
+
+
+
+
     }
 
 }

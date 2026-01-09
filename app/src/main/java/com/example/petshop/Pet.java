@@ -5,8 +5,15 @@ import java.util.Date;
 public abstract class  Pet {
     private String name;
     private Date birthday;
+    private  Mood mood;
+
+
 
     public abstract String speak();
+
+
+
+
 
     public Pet (String name){
         this.name = name;
@@ -32,4 +39,14 @@ public abstract class  Pet {
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
+
+    public Mood getMood() {
+        return mood;
+    }
+
+    public void setMood(Mood mood) {
+        this.mood = mood;
+    }
+
+
 }
